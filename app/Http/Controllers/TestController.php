@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Bot\Contracts\PhpTelegramBotContract;
+use Illuminate\Support\Facades\Log;
 use Longman\TelegramBot\Request;
 
 class TestController extends Controller
@@ -24,7 +25,8 @@ class TestController extends Controller
             $telegram->useGetUpdatesWithoutDatabase();
             $telegram->handleGetUpdates();
         } catch (\Throwable $e) {
-            echo $e->getMessage();
+            Log::error($e->getMessage());
+            // echo $e->getMessage();
         }
     }
 }
