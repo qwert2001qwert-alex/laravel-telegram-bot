@@ -17,13 +17,14 @@ return [
     'database' => [
         'enabled'    => false,
         'connection' => env('DB_CONNECTION', 'mysql'),
-        'prefix'     => env('PHP_TELEGRAM_BOT_TABLE_PREFIX', ''),
+        'prefix'     => env('PHP_TELEGRAM_BOT_TABLE_PREFIX', 'bot_'),
     ],
 
     'commands' => [
         'before'  => true,
         'paths'   => [
             // Custom command paths
+            app_path('Bot/Commands')
         ],
         'configs' => [
             // Custom commands configs
