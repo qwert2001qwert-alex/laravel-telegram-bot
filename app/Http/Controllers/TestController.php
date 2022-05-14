@@ -24,6 +24,7 @@ class TestController extends Controller
         try {
             $telegram->useGetUpdatesWithoutDatabase();
             $telegram->handleGetUpdates();
+            Log::error('##OK##');
         } catch (\Throwable $e) {
             Log::error($e->getMessage());
             // echo $e->getMessage();
