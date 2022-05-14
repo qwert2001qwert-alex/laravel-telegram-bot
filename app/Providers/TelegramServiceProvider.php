@@ -6,7 +6,7 @@ namespace App\Providers;
 
 use App\Bot\Contracts\PhpTelegramBotContract;
 use App\Bot\PhpTelegramBot;
-use App\Commands\WebhookCommand;
+use App\Console\Commands\WebhookCommand;
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 
 class TelegramServiceProvider extends LaravelServiceProvider

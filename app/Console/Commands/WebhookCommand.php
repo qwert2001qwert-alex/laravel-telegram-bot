@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Commands;
+namespace App\Console\Commands;
 
 use App\Bot\Contracts\PhpTelegramBotContract;
 use Illuminate\Console\Command;
