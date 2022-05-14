@@ -22,10 +22,21 @@ class TestController extends Controller
     public function getUpdates(PhpTelegramBotContract $telegram)
     {
         try {
+            $telegram->useGetUpdatesWithoutDatabase();
+            $telegram->handleGetUpdates();
+        } catch (\Throwable $e) {
+            Log::error($e->getMessage());
+            echo $e->getMessage();
+        }
+    }
+
+    public function webhook(PhpTelegramBotContract $telegram)
+    {
+        try {
             Log::info(@file_get_contents('php://input'));
 
             $telegram->useGetUpdatesWithoutDatabase();
-            $telegram->handleGetUpdates();
+            $telegram->handle();
         } catch (\Throwable $e) {
             Log::error($e->getMessage());
             echo $e->getMessage();
